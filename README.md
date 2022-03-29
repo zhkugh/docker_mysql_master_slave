@@ -92,10 +92,10 @@ version: "3.1"
 5. 执行 docker exec -it mysql-5.7.slave /bin/bash 进入从库容器
 
 ```
-   4.1 执行 myql -uroot -p123456
-   4.2 配置连接到主服务器的相关信息 ，执行 4.2.1 、4.2.2、4.2.3、4.2.4
-       4.2.1 STOP SLAVE;
-       4.2.2
+   5.1 执行 myql -uroot -p123456
+   5.2 配置连接到主服务器的相关信息 ，执行 4.2.1 、4.2.2、4.2.3、4.2.4
+       5.2.1 STOP SLAVE;
+       5.2.2
            CHANGE MASTER TO
            MASTER_HOST = '172.27.0.2',
            MASTER_USER = 'root',
@@ -104,6 +104,6 @@ version: "3.1"
            MASTER_LOG_FILE = 'mysql-bin.000001',
            MASTER_LOG_POS = 615,
            MASTER_CONNECT_RETRY = 30;
-       4.2.3 START SLAVE;
-       4.2.4 show slave status \G; 查看同步状态
+       5.2.3 START SLAVE;
+       5.2.4 show slave status \G; 查看同步状态
 ```
