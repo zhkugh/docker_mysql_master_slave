@@ -1,0 +1,4 @@
+[mysqld]
+server-id=1000
+log-bin=mysql-bin
+default_authentication_plugin=mysql_native_password
