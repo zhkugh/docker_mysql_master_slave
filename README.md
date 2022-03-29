@@ -85,7 +85,7 @@ version: "3.1"
    4.1 执行 myql -uroot -p123456
    4.2 创建一个专门用来复制的用户，执行 4.2.1 、4.2.2
        4.2.1 CREATE USER 'canal'@'%' IDENTIFIED BY 'canal123456';
-       4.2.2 GRANT REPLICATION SLAVE ON _._ TO 'canal'@'%' IDENTIFIED BY 'canal123456';
+       4.2.2 GRANT REPLICATION SLAVE ON *.* TO 'canal'@'%' IDENTIFIED BY 'canal123456';
    4.3 执行 SHOW MASTER STATUS; 查看主节点状态，获取从库连接到主库的信息
 ```
 
@@ -101,8 +101,8 @@ version: "3.1"
            MASTER_USER = 'root',
            MASTER_PASSWORD = '123456',
            MASTER_PORT = 3306,
-           MASTER_LOG_FILE = 'mysql-bin.000001',
-           MASTER_LOG_POS = 615,
+           MASTER_LOG_FILE = 'mysql-bin.000002',
+           MASTER_LOG_POS = 1638,
            MASTER_CONNECT_RETRY = 30;
        5.2.3 START SLAVE;
        5.2.4 show slave status \G; 查看同步状态
