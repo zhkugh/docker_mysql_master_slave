@@ -1,0 +1,23 @@
+version: "3.1"
+
+services:
+
+  mysql-master:
+    image: mysql:5.7
+    container_name: mysql-5.7.master
+    ports:
+      - "6606:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - ./mysql/mysqld.master.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+  
+  mysql-slave:
+    image: mysql:5.7
+    container_name: mysql-5.7.slave
+    ports:
+      - "7706:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - ./mysql/mysqld.slave.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
